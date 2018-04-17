@@ -4,6 +4,16 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+
+		maven {
+			name 'OWASP dependency-check snapshot'
+			url 'https://dependencycheck.jfrog.io/dependencycheck/libs-snapshot'
+		}
+		maven {
+			name 'OWASP dependency-check release'
+			url 'https://dependencycheck.jfrog.io/dependencycheck/libs-release'
+		}
+
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
