@@ -14,10 +14,9 @@ pipeline{
         }
         stage ('OWASP Dependency Check'){
             steps {
-                sh 'gradle dependencyCheckAnalyze'
+                sh 'gradle clean dependencyCheckAnalyze'
                 dependencyCheckPublisher canComputeNew: true, canRunOnFailed: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '', unstableTotalHigh: '0'
             }
         }
     }
-
 }
