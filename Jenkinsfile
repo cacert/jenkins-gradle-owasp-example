@@ -12,6 +12,12 @@ pipeline{
                 sh 'gradle clean test'
             }
         }
+        stage('package'){
+
+                    steps{
+                        sh 'gradle package'
+                    }
+                }
         stage ('OWASP Dependency Check'){
             steps {
                 dependencyCheckAnalyzer datadir: '', hintsFile: '', includeCsvReports: false, includeHtmlReports: false, includeJsonReports: false, isAutoupdateDisabled: false, outdir: '', scanpath: '**/lib/*.jar', skipOnScmChange: false, skipOnUpstreamChange: false, suppressionFile: '', zipExtensions: '',includeVulnReports: false
