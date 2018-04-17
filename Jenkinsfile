@@ -3,7 +3,10 @@ pipeline{
 
     stages{
         stage('deneme'){
-            echo 'ok'
+
+            steps{
+                echo 'ok'
+            }
         }
     }
 
