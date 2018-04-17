@@ -1,11 +1,15 @@
 pipeline{
     agent any
 
+        tools {
+            gradle 'gradle'
+        }
+
     stages{
         stage('deneme'){
 
             steps{
-                echo 'ok'
+                sh 'gradle clean test'
             }
         }
     }
