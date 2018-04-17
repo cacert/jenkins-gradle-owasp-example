@@ -14,8 +14,7 @@ pipeline{
         }
         stage ('OWASP Dependency Check'){
             steps {
-                sh 'gradle  -Ddependency.check.format=XML clean dependencyCheckAnalyze'
-                dependencyCheckPublisher canComputeNew: true, canRunOnFailed: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '', unstableTotalHigh: '0'
+                dependencyCheckAnalyzer datadir: '', hintsFile: '', includeCsvReports: false, includeHtmlReports: false, includeJsonReports: false, includeVulnReports: false, isAutoupdateDisabled: false, outdir: '', scanpath: '', skipOnScmChange: false, skipOnUpstreamChange: false, suppressionFile: '', zipExtensions: ''
             }
         }
     }
