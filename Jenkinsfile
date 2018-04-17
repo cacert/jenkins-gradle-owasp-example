@@ -15,7 +15,7 @@ pipeline{
         stage('package'){
 
                     steps{
-                        sh 'gradle package'
+                        sh 'gradle build'
                     }
                 }
         stage ('OWASP Dependency Check'){
